@@ -154,3 +154,29 @@ document.querySelectorAll('.slide').forEach((slide, index) => {
         window.location.href = `pages/products/${product.id}.html`;
     });
 });
+
+// Smooth scroll for the scroll indicator
+document.querySelector('.scroll-indicator').addEventListener('click', () => {
+    const sliderSection = document.querySelector('.slider-section');
+    sliderSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.querySelectorAll('.hero-title, .hero-subtitle, .section-title, .slider-container, .view-all-products').forEach(el => {
+    observer.observe(el);
+});
