@@ -18,3 +18,14 @@ body {
 .content {
     padding: 20px;
 }
+
+.snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: 5; /* Behind content but above background */
+}
+
