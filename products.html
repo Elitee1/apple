@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Produkte - Apple</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-card h2 {
+            font-size: 24px;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover h2 {
+            transform: translateY(-5px);
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-back:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .page-title {
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            margin: 40px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back">← Zurück zur Startseite</a>
+    
+    <h1 class="page-title">Alle Produkte</h1>
+
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="products/macbook.jpeg" alt="MacBook">
+            <h2>MacBook</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/iphone 16.jpeg" alt="iPhone 16">
+            <h2>iPhone 16</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/airpods.jpeg" alt="AirPods">
+            <h2>AirPods</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/mac.jpeg" alt="Mac">
+            <h2>Mac</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/macbook.jpeg" alt="MacBook">
+            <h2>MacBook Pro</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/iphone 16.jpeg" alt="iPhone 16">
+            <h2>iPhone 16 Pro</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/airpods.jpeg" alt="AirPods">
+            <h2>AirPods Pro</h2>
+        </div>
+        <div class="product-card">
+            <img src="products/mac.jpeg" alt="Mac">
+            <h2>Mac Pro</h2>
+        </div>
+    </div>
+</body>
+</html> 

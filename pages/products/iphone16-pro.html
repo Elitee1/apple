@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 16 Pro - Apple</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .product-detail {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .product-image {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-info {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .product-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-description {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .product-price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .buy-button {
+            background-color: #0071e3;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .buy-button:hover {
+            background-color: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .nav-back:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-back">← Zurück zur Startseite</a>
+
+    <div class="product-detail">
+        <div class="product-info">
+            <h1 class="product-title">iPhone 16 Pro</h1>
+            <img src="../../assets/images/iphone 16.jpeg" alt="iPhone 16 Pro" class="product-image">
+            <p class="product-description">
+                Das iPhone 16 Pro ist die Spitzenversion mit Pro-Kamerasystem und Titanium-Design.
+            </p>
+            <div class="product-price">€1,299</div>
+            <a href="#" class="buy-button">Jetzt kaufen</a>
+        </div>
+    </div>
+</body>
+</html> 
