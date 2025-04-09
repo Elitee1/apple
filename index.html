@@ -3,57 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figma Design Fixiert</title>
+    <title>Apple Store - Entdecken Sie unsere Produkte</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/scripts.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #0071e3;
+            --secondary-color: #ffffff;
+            --accent-color: #0071e3;
+            --text-color: #ffffff;
+            --background-color: #0A0A0A;
+            --card-background: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--background-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: var(--background-color);
+            position: relative;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+            padding: 40px;
+            background: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 113, 227, 0.2);
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-shadow: 0 0 20px rgba(0, 113, 227, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+            text-shadow: 0 0 10px rgba(0, 113, 227, 0.3);
+        }
+
+        .slider-section {
+            padding: 80px 20px;
+            background: var(--background-color);
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-color);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .slider-container {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            background: rgba(0, 113, 227, 0.05);
+            box-sizing: border-box;
+        }
+
+        .slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 12px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding-left: 0;
+            margin-left: 0;
+            position: relative;
+            left: 0;
+            box-sizing: border-box;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 300px;
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0;
+            min-width: 300px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+
+        .slide:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(0, 113, 227, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.2);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide h3 {
+            font-size: 22px;
+            margin: 0 0 10px 0;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .slide p {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1s;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: rgba(0, 113, 227, 0.1);
+        }
+
+        .scroll-indicator span {
+            font-size: 14px;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            animation: bounce 2s infinite;
+            color: var(--text-color);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            .slide {
+                flex: 0 0 250px;
+            }
+            .slider {
+                justify-content: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <script>
-        console.log("JavaScript is running!");
-    </script>
-    
-    <div class="fixed-design">
-        <img src="images/Desktop - 1 (2).png" class="full-width-image" alt="Figma Design">
-    </div>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Entdecken Sie die Zukunft</h1>
+            <p class="hero-subtitle">Erleben Sie die neuesten Innovationen von Apple</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scrollen Sie nach unten</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
 
-    <!-- Produkt-Slider -->
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide">
-                <img src="assets/images/macbook.jpeg" alt="MacBook">
-                <p>MacBook</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/iphone 16.jpeg" alt="iPhone 16">
-                <p>iPhone 16</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/airpods.jpeg" alt="AirPods">
-                <p>AirPods</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/mac.jpeg" alt="Mac">
-                <p>Mac</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/macbook.jpeg" alt="MacBook">
-                <p>MacBook Pro</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/iphone 16.jpeg" alt="iPhone 16">
-                <p>iPhone 16 Pro</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/airpods.jpeg" alt="AirPods">
-                <p>AirPods Pro</p>
-            </div>
-            <div class="slide">
-                <img src="assets/images/mac.jpeg" alt="Mac">
-                <p>Mac Pro</p>
+    <section class="slider-section">
+        <h2 class="section-title">Unsere Produkte</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="assets/images/macbook.jpeg" alt="MacBook">
+                    <h3>MacBook</h3>
+                    <p>€1,299</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/iphone 16.jpeg" alt="iPhone 16">
+                    <h3>iPhone 16</h3>
+                    <p>€999</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/airpods.jpeg" alt="AirPods">
+                    <h3>AirPods</h3>
+                    <p>€179</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/mac.jpeg" alt="Mac">
+                    <h3>Mac</h3>
+                    <p>€1,499</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/macbook.jpeg" alt="MacBook Pro">
+                    <h3>MacBook Pro</h3>
+                    <p>€2,499</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/iphone 16.jpeg" alt="iPhone 16 Pro">
+                    <h3>iPhone 16 Pro</h3>
+                    <p>€1,299</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/airpods.jpeg" alt="AirPods Pro">
+                    <h3>AirPods Pro</h3>
+                    <p>€249</p>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/mac.jpeg" alt="Mac Pro">
+                    <h3>Mac Pro</h3>
+                    <p>€7,999</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <a href="pages/products.html" class="view-all-products">Alle Produkte anzeigen</a>
+    <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
