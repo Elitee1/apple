@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         :root {
-            --primary-color: #FF0000;
-            --secondary-color: #FFFFFF;
-            --accent-color: #FF0000;
+            --primary-color: #0071e3;
+            --secondary-color: #ffffff;
+            --accent-color: #0071e3;
             --text-color: #ffffff;
             --background-color: #0A0A0A;
             --card-background: rgba(255, 255, 255, 0.05);
@@ -35,31 +35,8 @@
             background: var(--background-color);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--primary-color);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            opacity: 0.1;
-        }
-
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            background: var(--primary-color);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            opacity: 0.2;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .hero-content {
@@ -68,32 +45,8 @@
             position: relative;
             padding: 40px;
             background: var(--card-background);
-            border: 4px solid var(--primary-color);
-            border-radius: 0;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-        }
-
-        .hero-content::before,
-        .hero-content::after {
-            content: '';
-            position: absolute;
-            background: var(--primary-color);
-        }
-
-        .hero-content::before {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-        }
-
-        .hero-content::after {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 4px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 113, 227, 0.2);
         }
 
         .hero-title {
@@ -101,7 +54,7 @@
             font-weight: 800;
             margin-bottom: 20px;
             color: var(--text-color);
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            text-shadow: 0 0 20px rgba(0, 113, 227, 0.3);
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards;
@@ -114,23 +67,16 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards 0.2s;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            text-shadow: 0 0 10px rgba(0, 113, 227, 0.3);
         }
 
         .slider-section {
             padding: 80px 20px;
             background: var(--background-color);
             position: relative;
-        }
-
-        .slider-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-color);
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
         .section-title {
@@ -143,38 +89,22 @@
             animation: fadeInUp 0.8s ease forwards;
             position: relative;
             display: inline-block;
-        }
-
-        .section-title::before,
-        .section-title::after {
-            content: '';
-            position: absolute;
-            background: var(--primary-color);
-        }
-
-        .section-title::before {
-            top: 50%;
-            left: -20px;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 100%;
-        }
-
-        .section-title::after {
-            top: 50%;
-            right: -20px;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 100%;
+            width: 100%;
         }
 
         .slider-container {
-            max-width: 1400px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 0;
             padding: 20px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            background: rgba(0, 113, 227, 0.05);
+            box-sizing: border-box;
         }
 
         .slider {
@@ -182,9 +112,18 @@
             gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding: 20px 0;
+            padding: 20px 12px;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding-left: 0;
+            margin-left: 0;
+            position: relative;
+            left: 0;
+            box-sizing: border-box;
         }
 
         .slider::-webkit-scrollbar {
@@ -194,50 +133,33 @@
         .slide {
             flex: 0 0 300px;
             background: var(--card-background);
+            border-radius: 20px;
             padding: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            border: 4px solid var(--primary-color);
-        }
-
-        .slide::before,
-        .slide::after {
-            content: '';
-            position: absolute;
-            background: var(--primary-color);
-        }
-
-        .slide::before {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-        }
-
-        .slide::after {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0;
+            min-width: 300px;
+            flex-shrink: 0;
+            box-sizing: border-box;
         }
 
         .slide:hover {
             transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 0, 0, 0.1);
+            background: rgba(0, 113, 227, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.2);
         }
 
         .slide img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 10px;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
-            border: 2px solid var(--primary-color);
         }
 
         .slide:hover img {
@@ -256,53 +178,6 @@
             color: var(--primary-color);
             margin: 0;
             font-weight: 500;
-        }
-
-        .view-all-products {
-            display: block;
-            text-align: center;
-            margin: 40px auto;
-            padding: 15px 40px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            max-width: 200px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 0.6s;
-            position: relative;
-            border: 4px solid var(--primary-color);
-        }
-
-        .view-all-products::before,
-        .view-all-products::after {
-            content: '';
-            position: absolute;
-            background: var(--primary-color);
-        }
-
-        .view-all-products::before {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-        }
-
-        .view-all-products::after {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 4px;
-        }
-
-        .view-all-products:hover {
-            transform: translateY(-2px) scale(1.05);
-            background: var(--primary-color);
-            color: var(--secondary-color);
         }
 
         @keyframes fadeInUp {
@@ -325,30 +200,8 @@
             animation: fadeIn 1s ease forwards 1s;
             cursor: pointer;
             padding: 10px 20px;
-            border: 4px solid var(--primary-color);
-        }
-
-        .scroll-indicator::before,
-        .scroll-indicator::after {
-            content: '';
-            position: absolute;
-            background: var(--primary-color);
-        }
-
-        .scroll-indicator::before {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-        }
-
-        .scroll-indicator::after {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 4px;
+            border-radius: 20px;
+            background: rgba(0, 113, 227, 0.1);
         }
 
         .scroll-indicator span {
@@ -392,6 +245,9 @@
             }
             .slide {
                 flex: 0 0 250px;
+            }
+            .slider {
+                justify-content: flex-start;
             }
         }
     </style>
@@ -456,7 +312,6 @@
                 </div>
             </div>
         </div>
-        <a href="pages/products.html" class="view-all-products">Alle Produkte anzeigen</a>
     </section>
 
     <script src="assets/js/scripts.js" defer></script>

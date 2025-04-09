@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPods - Apple (DE)</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --primary-color: #0071e3;
+            --secondary-color: #ffffff;
+            --accent-color: #0071e3;
+            --text-color: #ffffff;
+            --background-color: #0A0A0A;
+            --card-background: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--background-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .product-section {
+            padding: 80px 20px;
+            background: var(--background-color);
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: var(--card-background);
+            border-radius: 20px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .product-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .product-price {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .product-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background: rgba(0, 113, 227, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .product-title {
+                font-size: 36px;
+            }
+            .product-price {
+                font-size: 24px;
+            }
+            .product-description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="product-section">
+        <div class="product-container">
+            <img src="../assets/images/airpods.jpeg" alt="AirPods" class="product-image">
+            <div class="product-info">
+                <h1 class="product-title">AirPods</h1>
+                <p class="product-price">€179</p>
+                <p class="product-description">
+                    Die AirPods sind drahtlose In-Ear-Kopfhörer von Apple, die sich nahtlos mit Ihren Apple-Geräten verbinden. 
+                    Mit ihrem eleganten Design und der herausragenden Klangqualität sind sie der perfekte Begleiter für unterwegs.
+                </p>
+                <div class="product-features">
+                    <div class="feature">
+                        <h3>Hörerlebnis</h3>
+                        <p>Hervorragende Klangqualität und aktive Geräuschunterdrückung</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Bequemlichkeit</h3>
+                        <p>Leichtes, ergonomisches Design für langes Tragen</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Intelligente Funktionen</h3>
+                        <p>Automatische Wiedergabe/Pause und Siri-Integration</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Akku</h3>
+                        <p>Bis zu 5 Stunden Hörzeit und schnelles Aufladen</p>
+                    </div>
+                </div>
+                <a href="../index.html" class="back-button">Zurück zur Übersicht</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
